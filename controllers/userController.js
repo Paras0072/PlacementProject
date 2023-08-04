@@ -40,13 +40,13 @@ module.exports.signIn = (req, res) => {
   return res.render("signin.ejs");
 };
 
-// render the Sign Up page
-module.exports.signUp = (req, res) => {
-  if (req.isAuthenticated()) {
-    return res.redirect("/profile");
-  }
-  return res.render("signup.ejs");
-};
+// // render the Sign Up page
+// module.exports.signUp = (req, res) => {
+//   if (req.isAuthenticated()) {
+//     return res.redirect("/profile");
+//   }
+//   return res.render("signup.ejs");
+// };
 
 // creating up a new user
 module.exports.create = async (req, res) => {
@@ -103,5 +103,3 @@ module.exports.destroySession = (req, res) => {
     return res.redirect("/");
   });
 };
-
-

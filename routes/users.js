@@ -27,8 +27,8 @@ router.get("/dashboard", dashboard);
 // router for sign in page
 router.get("/", signIn);
 
-// route for sign up page
-router.get("/sign-up", signUp);
+// // route for sign up page
+// router.get("/sign-up", signUp);
 
 // route for creating a new User
 router.post("/create", create);

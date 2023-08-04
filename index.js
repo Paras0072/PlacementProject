@@ -55,7 +55,10 @@ app.use(passport.setAuthenticatedUser);
 
 // using express routers
 app.use(require("./routes"));
-
+app.use("/", require("./routes/index"));
+app.use("/users", require("./routes/users"));
+// app.use(("/auth", authRouter));
+app.use(express.static("./assets"));
 // using bodyParser
 app.use(bodyParser.json());
 
@@ -65,5 +68,5 @@ app.listen(port, (err) => {
     console.log("error in starting the server", err);
     return;
   }
-  console.log("server is succesfully running on port 8000");
+  console.log("server is succesfully running on port 3000");
 });
