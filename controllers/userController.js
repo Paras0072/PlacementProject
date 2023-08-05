@@ -1,5 +1,5 @@
 const User = require("../models/user");
-
+const bcryptjs = require("bcryptjs");
 module.exports.profile = function (req, res) {
   return res.render("user_profile", {
     title: "User Profile",
@@ -25,7 +25,7 @@ module.exports.updateUser = async function (req, res) {
     user.password = password;
 
     user.save();
-    return res.redirect("back");
+    return res.redirect("/dashboard");
   } catch (err) {
     console.log(err);
     return res.redirect("back");
@@ -69,8 +69,7 @@ module.exports.create = async (req, res) => {
         await User.create(
           {
             email,
-            password,
-            username,
+            password: username,
           },
           (err, user) => {
             if (err) {

@@ -9,11 +9,12 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="shortcut icon" type="image/x-icon" href="/auth.png" />
     <title>Dashboard</title>
   </head>
 
-  <body style="background-color: aliceblue;">
-    <!-- PARTIAL FOR HEADER --> 
+  <body style="background-color: aliceblue">
+    <!-- PARTIAL FOR HEADER -->
     <%- include('_header') %> <% if(locals.user) {%>
     <div class="d-flex m-0 mt-5 p-2 flex-wrap justify-content-center">
       <!-- Student list section -->

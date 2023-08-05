@@ -2,10 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const app = express();
-
-// require ('dotenv').config();
+// const dotenv = require("dotenv");
 const port = process.env.PORT || 3000;
 const db = require("./config/mongoose");
+require("dotenv").config();
 
 app.use(
   bodyParser.urlencoded({
@@ -57,7 +57,8 @@ app.use(passport.setAuthenticatedUser);
 app.use(require("./routes"));
 app.use("/", require("./routes/index"));
 app.use("/users", require("./routes/users"));
-// app.use(("/auth", authRouter));
+
+app.use("/auth", require("./routes/auth"));
 app.use(express.static("./assets"));
 // using bodyParser
 app.use(bodyParser.json());
